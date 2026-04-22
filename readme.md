@@ -1,3 +1,4 @@
+https://gabrielapsdn.github.io/portfolio-gabriela/
 📑 Portfólio Estudantil — Gabriela do Nascimento
 Este repositório contém o código-fonte do portfólio pessoal e académico de Gabriela do Nascimento, aluna da turma 3B do Ensino Médio no SESI, em Florianópolis. O projeto combina uma estética inspirada na cultura pop (especialmente na discografia de Taylor Swift) com a organização de competências técnicas e académicas.
 
@@ -44,3 +45,4 @@ Certifique-se de que todas as imagens (ex: album-evermore.jpeg, suafoto.jpg) est
 Abra o ficheiro index.html em qualquer navegador moderno.
 
 Este projeto foi desenvolvido como parte integrante das avaliações do curso técnico e do Ensino Médio SESI SENAI.
+https://docs.google.com/document/d/13-Vf5ltNoN3zkUB8Bv5TrrODypVh4n6puyzQkFF5DeI/edit?usp=sharing
