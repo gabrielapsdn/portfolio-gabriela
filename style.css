@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Courier+Prime:wght@400;700&display=swap');
+
+/* =============================================
+   VARIÁVEIS
+   ============================================= */
+:root {
+    --j-bg:     #d8cdb0;
+    --j-paper:  #e8dfc4;
+    --j-ink:    #18130a;
+    --j-muted:  #3a2e1a;
+    --j-border: #a89870;
+    --j-gold:   #c8a84a;
+    --radius:   2px;
+}
+
+/* =============================================
+   FUNDO — textura de jornal real
+   Combinação: cor base amarelada + SVG de linhas
+   densas em 3 colunas + ruído de grão de papel
+   ============================================= */
+html {
+    background-color: var(--j-bg);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IM Fell English', Georgia, serif;
+    color: var(--j-ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+
+    /* Camada 1: textura de papel envelhecido */
+    background-color: var(--j-paper);
+    background-image:
+        /* Grão de papel — noise fino */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E"),
+        /* Linhas de texto em 3 colunas — denso como jornal real */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='640'%3E%3Crect width='960' height='640' fill='%23e6dbbf'/%3E%3C!-- COLUNA 1 --%3E%3Crect x='18' y='16' width='264' height='5' rx='1' fill='%2318130a' opacity='0.22'/%3E%3Crect x='18' y='25' width='248' height='5' rx='1' fill='%2318130a' opacity='0.18'/%3E%3Crect x='18' y='34' width='258' height='5' rx='1' fill='%2318130a' opacity='0.18'/%3E%3Crect x='18' y='43' width='240' height='5' rx='1' fill='%2318130a' opacity='0.18'/%3E%3Crect x='18' y='52' width='255' height='5' rx='1' fill='%2318130a' opacity='0.18'/%3E%3Crect x='18' y='61' width='244' height='5' rx='1' fill='%2318130a' opacity='0.16'/%3E%3Crect x='18' y='70' width='260' height='5' rx='1' fill='%2318130a' opacity='0.16'/%3E%3Crect x='18' y='79' width='238' height='5' rx='1' fill='%2318130a' opacity='0.16'/%3E%3Crect x='18' y='88' width='252' height='5' rx='1' fill='%2318130a' opacity='0.16'/%3E%3Crect x='18' y='97' width='246' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='18' y='106' width='256' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='18' y='115' width='242' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='18' y='124' width='258' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='18' y='133' width='236' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='18' y='142' width='250' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='18' y='151' width='244' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='18' y='160' width='262' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='18' y='169' width='240' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='18' y='178' width='254' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='18' y='187' width='246' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='18' y='196' width='258' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='18' y='205' width='238' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='18' y='214' width='252' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='18' y='223' width='244' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='18' y='232' width='260' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='18' y='241' width='236' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='18' y='250' width='250' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='18' y='259' width='242' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='18' y='268' width='256' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='18' y='277' width='240' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='18' y='286' width='258' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='18' y='295' width='234' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='18' y='304' width='248' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='18' y='313' width='244' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='18' y='322' width='260' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='18' y='331' width='238' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='18' y='340' width='252' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='18' y='349' width='246' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='18' y='358' width='258' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='18' y='367' width='236' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='18' y='376' width='250' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='18' y='385' width='242' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='18' y='394' width='264' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='18' y='403' width='240' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='412' width='254' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='421' width='248' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='430' width='258' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='439' width='238' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='448' width='252' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='457' width='244' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='466' width='260' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='18' y='475' width='236' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='484' width='250' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='493' width='246' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='502' width='258' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='511' width='240' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='520' width='252' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='529' width='244' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='538' width='260' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='547' width='238' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='556' width='250' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='18' y='565' width='244' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='574' width='258' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='583' width='240' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='592' width='254' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='601' width='246' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='610' width='260' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='619' width='236' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='18' y='628' width='250' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3C!-- COLUNA 2 --%3E%3Crect x='338' y='16' width='264' height='5' rx='1' fill='%2318130a' opacity='0.19'/%3E%3Crect x='338' y='25' width='246' height='5' rx='1' fill='%2318130a' opacity='0.15'/%3E%3Crect x='338' y='34' width='258' height='5' rx='1' fill='%2318130a' opacity='0.15'/%3E%3Crect x='338' y='43' width='238' height='5' rx='1' fill='%2318130a' opacity='0.15'/%3E%3Crect x='338' y='52' width='253' height='5' rx='1' fill='%2318130a' opacity='0.15'/%3E%3Crect x='338' y='61' width='244' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='338' y='70' width='260' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='338' y='79' width='236' height='5' rx='1' fill='%2318130a' opacity='0.14'/%3E%3Crect x='338' y='88' width='250' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='338' y='97' width='244' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='338' y='106' width='258' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='338' y='115' width='240' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='338' y='124' width='256' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='338' y='133' width='238' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='338' y='142' width='252' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='338' y='151' width='242' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='338' y='160' width='260' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='338' y='169' width='238' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='338' y='178' width='254' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='338' y='187' width='244' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='338' y='196' width='258' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='338' y='205' width='236' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='338' y='214' width='250' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='338' y='223' width='244' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='338' y='232' width='262' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='338' y='241' width='238' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='338' y='250' width='252' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='338' y='259' width='246' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='338' y='268' width='258' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='338' y='277' width='240' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='338' y='286' width='256' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='338' y='295' width='242' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='338' y='304' width='260' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='338' y='313' width='236' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='338' y='322' width='250' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='338' y='331' width='244' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='338' y='340' width='258' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='338' y='349' width='240' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='338' y='358' width='254' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='338' y='367' width='248' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='338' y='376' width='260' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='338' y='385' width='238' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='338' y='394' width='252' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='338' y='403' width='244' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='338' y='412' width='260' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='338' y='421' width='236' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='430' width='250' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='439' width='246' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='448' width='258' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='457' width='240' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='466' width='254' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='475' width='242' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='484' width='260' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='338' y='493' width='238' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='502' width='252' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='511' width='246' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='520' width='258' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='529' width='240' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='538' width='254' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='547' width='244' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='556' width='260' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='565' width='238' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='574' width='252' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='583' width='244' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='592' width='260' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='601' width='238' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='610' width='254' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='619' width='246' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='338' y='628' width='260' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3C!-- COLUNA 3 --%3E%3Crect x='658' y='16' width='264' height='5' rx='1' fill='%2318130a' opacity='0.17'/%3E%3Crect x='658' y='25' width='244' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='658' y='34' width='258' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='658' y='43' width='240' height='5' rx='1' fill='%2318130a' opacity='0.13'/%3E%3Crect x='658' y='52' width='255' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='658' y='61' width='246' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='658' y='70' width='260' height='5' rx='1' fill='%2318130a' opacity='0.12'/%3E%3Crect x='658' y='79' width='238' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='658' y='88' width='252' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='658' y='97' width='244' height='5' rx='1' fill='%2318130a' opacity='0.11'/%3E%3Crect x='658' y='106' width='258' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='658' y='115' width='240' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='658' y='124' width='256' height='5' rx='1' fill='%2318130a' opacity='0.10'/%3E%3Crect x='658' y='133' width='238' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='658' y='142' width='252' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='658' y='151' width='242' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='658' y='160' width='260' height='5' rx='1' fill='%2318130a' opacity='0.09'/%3E%3Crect x='658' y='169' width='238' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='658' y='178' width='254' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='658' y='187' width='244' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='658' y='196' width='260' height='5' rx='1' fill='%2318130a' opacity='0.08'/%3E%3Crect x='658' y='205' width='238' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='658' y='214' width='252' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='658' y='223' width='246' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='658' y='232' width='260' height='5' rx='1' fill='%2318130a' opacity='0.07'/%3E%3Crect x='658' y='241' width='238' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='658' y='250' width='252' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='658' y='259' width='244' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='658' y='268' width='258' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='658' y='277' width='240' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='658' y='286' width='256' height='5' rx='1' fill='%2318130a' opacity='0.06'/%3E%3Crect x='658' y='295' width='242' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='658' y='304' width='260' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='658' y='313' width='236' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='658' y='322' width='250' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='658' y='331' width='244' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='658' y='340' width='258' height='5' rx='1' fill='%2318130a' opacity='0.05'/%3E%3Crect x='658' y='349' width='240' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='358' width='254' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='367' width='246' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='376' width='260' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='385' width='238' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='394' width='252' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='403' width='246' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='412' width='260' height='5' rx='1' fill='%2318130a' opacity='0.04'/%3E%3Crect x='658' y='421' width='238' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='430' width='252' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='439' width='244' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='448' width='260' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='457' width='236' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='466' width='250' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='475' width='244' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='484' width='260' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='493' width='238' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3Crect x='658' y='502' width='254' height='5' rx='1' fill='%2318130a' opacity='0.03'/%3E%3C!-- Divisores de coluna --%3E%3Crect x='306' y='0' width='1' height='640' fill='%2318130a' opacity='0.15'/%3E%3Crect x='626' y='0' width='1' height='640' fill='%2318130a' opacity='0.15'/%3E%3C/svg%3E");
+    background-size: 300px 300px, 960px 640px;
+    background-repeat: repeat, repeat;
+}
+
+/* =============================================
+   HEADER — estilo manchete de jornal
+   ============================================= */
+header {
+    background: var(--j-ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px double #444;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+header::before {
+    content: '✦ THE GABRIELA GAZETTE ✦';
+    display: block;
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--j-gold);
+    padding: 4px 0 0;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+header nav {
+    padding: 10px 24px 12px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+}
+
+nav a {
+    color: #e8d8a0 !important;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    padding: 5px 13px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    transition: background 0.15s, color 0.15s;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(200,168,74,0.3);
+    color: #f8e8b8 !important;
+}
+
+/* =============================================
+   MAIN
+   ============================================= */
+main {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 36px 6%;
+    position: relative;
+}
+
+/* Linha separadora entre seções */
+section + section {
+    border-top: 1px solid var(--j-border);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--j-ink);
+    margin: 0 0 10px;
+}
+
+/* =============================================
+   TÍTULOS — estilo manchete de jornal
+   ============================================= */
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--j-ink);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid var(--j-ink);
+    margin-top: 3px;
+}
+
+/* =============================================
+   NOME / TURMA
+   ============================================= */
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+    border-bottom: 3px solid var(--j-ink);
+    padding-bottom: 8px;
+}
+
+.section-header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--j-ink);
+    margin-top: 3px;
+    position: absolute;
+    left: 6%;
+    bottom: calc(36px + 8px - 2px);
+    width: 88%;
+}
+
+.title-side { display: flex; flex-direction: column; line-height: 1; }
+
+.title-side .nome {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--j-ink);
+    font-variant-caps: small-caps;
+    letter-spacing: 0.05em;
+}
+
+.title-side .turma {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem;
+    color: var(--j-muted);
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* =============================================
+   PERFIL
+   ============================================= */
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 12px;
+}
+
+.foto-perfil {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50% !important;
+    padding: 6px;
+    background: #d8cba8;
+    border: 5px solid var(--j-border) !important;
+    box-shadow: 4px 4px 0 #8a7a50, 0 8px 24px rgba(0,0,0,0.22) !important;
+    display: block;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.toggle-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--j-ink) !important;
+    color: #e8d8a0 !important;
+    border: none;
+    border-radius: 2px !important;
+    cursor: pointer;
+    font-size: 16px;
+    flex-shrink: 0;
+    box-shadow: 2px 2px 0 #555;
+}
+
+.perfil-text {
+    flex: 1;
+    overflow: hidden;
+    transition: max-height 0.32s ease, opacity 0.24s ease;
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.perfil-text p {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--j-muted);
+    margin: 0;
+    /* Simula texto em coluna de jornal */
+    text-align: justify;
+    hyphens: auto;
+}
+
+.perfil-text.collapsed { max-height: 0; opacity: 0; }
+
+#apresentacao-content {
+    overflow: hidden;
+    transition: max-height 0.32s ease, opacity 0.24s ease;
+    max-height: 2000px;
+    opacity: 1;
+}
+#apresentacao-content.collapsed { max-height: 0; opacity: 0; }
+
+/* =============================================
+   CURRÍCULO
+   ============================================= */
+.cv-content p {
+    font-family: 'IM Fell English', Georgia, serif;
+    color: var(--j-muted);
+    font-size: 15px;
+}
+
+.cv-thumb {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+    margin-bottom: 10px;
+    border: 3px solid var(--j-border) !important;
+    box-shadow: 4px 4px 0 #8a7a50 !important;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--j-ink) !important;
+    color: #e8d8a0 !important;
+    padding: 9px 22px;
+    border-radius: 2px !important;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid #555;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn:hover { transform: translate(2px,2px); box-shadow: 1px 1px 0 #000; }
+
+img {
+    border: 3px solid var(--j-border);
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    display: block;
+}
+
+/* =============================================
+   FILTRO
+   ============================================= */
+.filtros { margin-bottom: 28px; }
+
+select {
+    background: #f0e6c8;
+    border: 1.5px solid var(--j-border);
+    color: var(--j-ink);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0 var(--j-border);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* =============================================
+   ESTANTE — com imagens reais dos recibos
+   ============================================= */
+.shelf-wrapper { padding: 20px 0 0; }
+
+.shelf {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    /* Prateleira de madeira */
+    background: linear-gradient(
+        to bottom,
+        transparent 85%,
+        #6b3f1a 85%, #6b3f1a 91%,
+        #4e2d10 91%, #4e2d10 95%,
+        #3a2008 95%
+    );
+    padding: 24px 36px 0;
+    min-height: 280px;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 10px 0 #2a1408, 0 18px 32px rgba(0,0,0,0.4);
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.album-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(.22,.68,0,1.2), filter 0.2s;
+    position: relative;
+}
+
+.album-btn:hover {
+    transform: translateY(-14px);
+    filter: drop-shadow(0 12px 16px rgba(0,0,0,0.5));
+}
+
+/* Imagem real do recibo como capa */
+.album-cover-img {
+    width: 130px;
+    height: 210px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 2px;
+    border: none !important;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.3), 4px 4px 12px rgba(0,0,0,0.45) !important;
+    display: block;
+}
+
+.album-label {
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #e8d8a0;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* =============================================
+   POPUP — estilo livro/caderno
+   ============================================= */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 8, 2, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+.popup-overlay.hidden { display: none; }
+
+.popup-book {
+    width: min(700px, 92vw);
+    max-height: 85vh;
+    border-radius: 3px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.65), 8px 0 0 #a08050 inset;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-left: 10px solid #7a5a28;
+    position: relative;
+    background-color: #f8f0da;
+    background-image: repeating-linear-gradient(
+        transparent, transparent 31px,
+        #b8cfe0 31px, #b8cfe0 32px
+    );
+    background-attachment: local;
+}
+
+/* Faixa de cor no topo baseada no álbum */
+.popup-album-stripe {
+    height: 7px;
+    background: var(--stripe-color, #7a5a28);
+    flex-shrink: 0;
+}
+
+.popup-header {
+    padding: 18px 32px 14px 44px;
+    flex-shrink: 0;
+    border-bottom: 1.5px dashed #a89060;
+    position: relative;
+}
+
+.popup-volume {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a7040;
+    margin-bottom: 4px;
+}
+
+.popup-area-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #18130a;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #8a6a3a;
+    border-radius: 50%;
+    background: #f8f0da;
+    color: #8a6a3a;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    line-height: 1;
+    font-family: sans-serif;
+}
+.popup-close:hover { background: #18130a; color: #e8d8a0; border-color: #18130a; }
+
+/* Abas */
+.popup-tabs {
+    display: flex;
+    padding: 8px 32px 0 44px;
+    border-bottom: 2px solid #18130a;
+    flex-shrink: 0;
+    gap: 3px;
+}
+
+.popup-tab {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-bottom: none;
+    color: #8a7040;
+    background: transparent;
+    transition: color 0.12s;
+    user-select: none;
+    border-radius: 3px 3px 0 0;
+}
+.popup-tab:hover { color: #18130a; }
+.popup-tab.active {
+    color: #18130a;
+    background: #f8f0da;
+    border-color: #18130a;
+    border-bottom: 2px solid #f8f0da;
+    margin-bottom: -2px;
+}
+
+/* Corpo */
+.popup-body {
+    padding: 14px 32px 28px 44px;
+    overflow-y: auto;
+    flex: 1;
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 14.5px;
+    line-height: 32px;
+    color: #18130a;
+    position: relative;
+}
+
+/* Margem vermelha */
+.popup-body::before {
+    content: '';
+    position: absolute;
+    left: 34px;
+    top: 0; bottom: 0;
+    width: 1.5px;
+    background: #cc4444;
+    opacity: 0.65;
+}
+
+.popup-atividade {
+    margin-bottom: 6px;
+}
+.popup-atividade h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #18130a;
+    margin: 4px 0 0;
+    line-height: 32px;
+}
+.popup-atividade p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #3a2e1a;
+    line-height: 32px;
+}
+.popup-vazio {
+    color: #9a8a6a;
+    font-style: italic;
+    line-height: 32px;
+}
+
+/* =============================================
+   CARD (compatibilidade)
+   ============================================= */
+.card {
+    background: #f0e8cc;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0 var(--j-border);
+    border: 1px solid var(--j-border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 4px 6px 0 var(--j-border); }
+.card img { width: 100%; height: auto; border-radius: 2px; object-fit: cover; }
+
+/* =============================================
+   RESPONSIVO
+   ============================================= */
+@media (max-width: 720px) {
+    .perfil { flex-direction: column; text-align: center; }
+    .foto-perfil { width: 180px; height: 180px; }
+    .shelf { gap: 12px; padding: 16px 16px 0; }
+    .album-cover-img { width: 100px; height: 162px; }
+    h2 { font-size: 1.5rem; }
+}
