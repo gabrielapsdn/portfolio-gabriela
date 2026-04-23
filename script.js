@@ -42,7 +42,7 @@ const dados = {
             '1trim': [
                 { titulo: 'Atividade - Quebrando a banca', descricao: 'A atividade propõe analisar o filme relacionando-o com conceitos matemáticos, como probabilidade e estatística. Os alunos devem interpretar a história, identificar aplicações da matemática e refletir sobre decisões e consequências. Habilidades - H31- Reconhecer fenômenos e eventos (naturais, científicos, tecnológicos e/ou sociais) de caráter aleatório, compreendendo o significado e a importância da probabilidade como meio de prever resultados.
 H32- Identificar em diferentes áreas científicas e outras atividades práticas modelos e problemas que fazem uso de estatísticas e probabilidades.
-C5: Aplicar o pensamento probabilístico para quantificar e fazer previsões em situações aplicadas a diferentes áreas do conhecimento e da vida cotidiana.', justificativa: 'Ela estimula a criatividade ao propor a criação de uma ideia de roteiro envolvendo matemática.', link: 'https://docs.google.com/document/d/13-Vf5ltNoN3zkUB8Bv5TrrODypVh4n6puyzQkFF5DeI/edit?usp=sharing' },
+C5: Aplicar o pensamento probabilístico para quantificar e fazer previsões em situações aplicadas a diferentes áreas Do conhecimento e da vida cotidiana.', justificativa: 'Ela estimula a criatividade ao propor a criação de uma ideia de roteiro envolvendo matemática.', link: 'https://docs.google.com/document/d/13-Vf5ltNoN3zkUB8Bv5TrrODypVh4n6puyzQkFF5DeI/edit?usp=sharing' },
                 { titulo: 'Nova Atividade de Matemática', descricao: 'Descrição da nova atividade...', justificativa: 'Justificativa da nova atividade...', link: '#' }
             ],
             '2trim': [],
