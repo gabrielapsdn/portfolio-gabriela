@@ -1,5 +1,5 @@
 // Filtro trimestre
-document.getElementById('select-trimestre').addEventListener('change', function() {
+document.getElementById('select-trimestre').addEventListener('change', function () {
     const v = this.value;
     document.querySelectorAll('.card').forEach(card => {
         card.style.display = (v === 'todos' || card.getAttribute('data-trimestre') === v) ? 'block' : 'none';
@@ -9,7 +9,7 @@ document.getElementById('select-trimestre').addEventListener('change', function(
 // Toggle apresentação
 const toggleBtn = document.getElementById('toggle-apresentacao');
 if (toggleBtn) {
-    toggleBtn.addEventListener('click', function() {
+    toggleBtn.addEventListener('click', function () {
         const txt = document.querySelector('.perfil-text');
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', String(!expanded));
@@ -28,8 +28,8 @@ const dados = {
         volume: 'Volume I — evermore',
         cor: '#7a5c2e',
         trimestres: {
-            '1trim': [{ titulo: 'Atividade Avaliativa: A Paixão de G.H.', descricao: 'A produção do vídeo sobre a obra de Clarice Lispector me permitiu analisar a relação entre literatura e sociologia, focando nas tensões sociais presentes na narrativa. A atividade exercitou minha capacidade de síntese e interpretação crítica sobre o existencialismo.', justificativa: 'Esta atividade é importante pois conecta a teoria literária à realidade social, desenvolvendo o pensamento crítico e habilidades de comunicação audiovisual.' },
-                { titulo: 'Atividade de aula: Game Literário (26/02)', descricao: 'A criação do jogo de memória em grupo foi uma maneira lúdica de fixar conceitos literários e trabalhar a colaboração. A atividade uniu criatividade e técnica para transformar o conteúdo teórico em uma experiência prática. Habilidade: H15', justificativa: 'É fundamental para estimular o aprendizado ativo e o trabalho em equipe, facilitando a memorização de temas complexos através da ludicidade.' }],
+            '1trim': [{ titulo: 'Atividade Avaliativa: A Paixão de G.H.', descricao: 'A produção do vídeo sobre a obra de Clarice Lispector me permitiu analisar a relação entre literatura e sociologia, focando nas tensões sociais presentes na narrativa. A atividade exercitou minha capacidade de síntese e interpretação crítica sobre o existencialismo.', justificativa: 'Esta atividade é importante pois conecta a teoria literária à realidade social, desenvolvendo o pensamento crítico e habilidades de comunicação audiovisual.', link: 'https://canva.link/lixqtkksiwe43jf' },
+            { titulo: 'Atividade de aula: Game Literário (26/02)', descricao: 'A criação do jogo de memória em grupo foi uma maneira lúdica de fixar conceitos literários e trabalhar a colaboração. A atividade uniu criatividade e técnica para transformar o conteúdo teórico em uma experiência prática. Habilidade: H15', justificativa: 'É fundamental para estimular o aprendizado ativo e o trabalho em equipe, facilitando a memorização de temas complexos através da ludicidade.', link: 'https://canva.link/7c70e2mp451kqfb' }],
             '2trim': [],
             '3trim': []
         }
@@ -39,7 +39,10 @@ const dados = {
         volume: 'Volume II — folklore',
         cor: '#3a3a3a',
         trimestres: {
-            '1trim': [{ titulo: 'Título da Atividade', descricao: 'O que foi feito...', justificativa: 'Por que essa atividade é importante...' }],
+            '1trim': [
+                { titulo: 'Título da Atividade', descricao: 'O que foi feito...', justificativa: 'Por que essa atividade é importante...', link: '#' },
+                { titulo: 'Nova Atividade de Matemática', descricao: 'Descrição da nova atividade...', justificativa: 'Justificativa da nova atividade...', link: '#' }
+            ],
             '2trim': [],
             '3trim': []
         }
@@ -49,9 +52,9 @@ const dados = {
         volume: 'Volume III — Midnights',
         cor: '#1a1a3a',
         trimestres: {
-            '1trim': [{ titulo: 'Meme Sobre Evolucionismo', descricao: 'A criação do meme permitiu traduzir conceitos complexos da evolução biológica para uma linguagem moderna e acessível. A explicação técnica que acompanhou a imagem ajudou a consolidar o entendimento sobre seleção natural e adaptação. Habilidades/Competências: C3, H15, H18.', justificativa: 'É importante para desenvolver a capacidade de transpor o conhecimento científico para diferentes linguagens, facilitando a fixação do conteúdo.' },
-                { titulo: 'Apresentação: Combustíveis Fósseis', descricao: 'A atividade abordou o impacto ambiental e a dependência social dos combustíveis fósseis. Através da pesquisa e apresentação, foi possível compreender as transformações de energia e os desafios para a implementação de fontes mais limpas. Habilidades/Competências: C1, H1, C2, H9, H11.', justificativa: 'Fundamental para conscientizar sobre o papel da química na sustentabilidade e desenvolver a habilidade de propor intervenções tecnológicas responsáveis.' },
-                { titulo: 'Relatório: Disputa de Eletricidade (Atrito)', descricao: 'O relatório da atividade prática sobre eletricidade por atrito explorou os fundamentos da eletrostática na prática. A experiência ajudou a observar a transferência de cargas e a entender fenômenos do cotidiano através da investigação científica. Habilidades/Competências: C1, H1, C2, H7, H9, H11, H12.', justificativa: 'Esta atividade é essencial para conectar a teoria física à experimentação, estimulando a curiosidade científica e o domínio do método de observação.' }],
+            '1trim': [{ titulo: 'Meme Sobre Evolucionismo', descricao: 'A criação do meme permitiu traduzir conceitos complexos da evolução biológica para uma linguagem moderna e acessível. A explicação técnica que acompanhou a imagem ajudou a consolidar o entendimento sobre seleção natural e adaptação. Habilidades/Competências: C3, H15, H18.', justificativa: 'É importante para desenvolver a capacidade de transpor o conhecimento científico para diferentes linguagens, facilitando a fixação do conteúdo.', link: '#' },
+            { titulo: 'Apresentação: Combustíveis Fósseis', descricao: 'A atividade abordou o impacto ambiental e a dependência social dos combustíveis fósseis. Através da pesquisa e apresentação, foi possível compreender as transformações de energia e os desafios para a implementação de fontes mais limpas. Habilidades/Competências: C1, H1, C2, H9, H11.', justificativa: 'Fundamental para conscientizar sobre o papel da química na sustentabilidade e desenvolver a habilidade de propor intervenções tecnológicas responsáveis.', link: '#' },
+            { titulo: 'Relatório: Disputa de Eletricidade (Atrito)', descricao: 'O relatório da atividade prática sobre eletricidade por atrito explorou os fundamentos da eletrostática na prática. A experiência ajudou a observar a transferência de cargas e a entender fenômenos do cotidiano através da investigação científica. Habilidades/Competências: C1, H1, C2, H7, H9, H11, H12.', justificativa: 'Esta atividade é essencial para conectar a teoria física à experimentação, estimulando a curiosidade científica e o domínio do método de observação.', link: '#' }],
             '2trim': [],
             '3trim': []
         }
@@ -61,9 +64,9 @@ const dados = {
         volume: 'Volume IV — reputation',
         cor: '#111111',
         trimestres: {
-            '1trim': [{ titulo: 'Semana 1 - Geopolítica: Apresentação de País', descricao: 'A elaboração desta apresentação permitiu analisar a fundo a realidade de uma nação específica, utilizando dados confiáveis para entender sua formação e contexto atual. O trabalho em dupla facilitou a comparação de diferentes realidades e a compreensão da dinâmica geopolítica global. Habilidades/Competências: C1, H1, H2, H3, H4, H5.', justificativa: 'É importante para desenvolver a capacidade de pesquisa e análise crítica sobre como fatores históricos e geográficos influenciam as relações de poder e a organização das sociedades no mundo.' },
-                        { titulo: 'Semana 1 - Geopolítica: Apresentação de País', descricao: 'A elaboração desta apresentação permitiu analisar a fundo a realidade de uma nação específica, utilizando dados confiáveis para entender sua formação e contexto atual. O trabalho em dupla facilitou a comparação de diferentes realidades e a compreensão da dinâmica geopolítica global. Habilidades/Competências: C1, H1, H2, H3, H4, H5.', justificativa: 'É importante para desenvolver a capacidade de pesquisa e análise crítica sobre como fatores históricos e geográficos influenciam as relações de poder e a organização das sociedades no mundo.' },
-                          { titulo: 'Semana 1 - Geopolítica: Apresentação de País', descricao: 'A elaboração desta apresentação permitiu analisar a fundo a realidade de uma nação específica, utilizando dados confiáveis para entender sua formação e contexto atual. O trabalho em dupla facilitou a comparação de diferentes realidades e a compreensão da dinâmica geopolítica global. Habilidades/Competências: C1, H1, H2, H3, H4, H5.', justificativa: 'É importante para desenvolver a capacidade de pesquisa e análise crítica sobre como fatores históricos e geográficos influenciam as relações de poder e a organização das sociedades no mundo.' }],
+            '1trim': [{ titulo: 'Semana 1 - Geopolítica: Apresentação de País', descricao: 'A elaboração desta apresentação permitiu analisar a fundo a realidade de uma nação específica, utilizando dados confiáveis para entender sua formação e contexto atual. O trabalho em grupo facilitou a comparação de diferentes realidades e a compreensão da dinâmica geopolítica global. Habilidades/Competências: C1, H1, H2, H3, H4, H5.', justificativa: 'É importante para desenvolver a capacidade de pesquisa e análise crítica sobre como fatores históricos e geográficos influenciam as relações de poder e a organização das sociedades no mundo.', link: 'https://canva.link/kzoxj1ge8cavkxh' },
+            { titulo: 'Semana 1 - Geopolítica: Apresentação de País', descricao: 'A elaboração desta apresentação permitiu analisar a fundo a realidade de uma nação específica, utilizando dados confiáveis para entender sua formação e contexto atual. O trabalho em dupla facilitou a comparação de diferentes realidades e a compreensão da dinâmica geopolítica global. Habilidades/Competências: C1, H1, H2, H3, H4, H5.', justificativa: 'É importante para desenvolver a capacidade de pesquisa e análise crítica sobre como fatores históricos e geográficos influenciam as relações de poder e a organização das sociedades no mundo.', link: '#' },
+            { titulo: 'Semana 1 - Geopolítica: Apresentação de País', descricao: 'A elaboração desta apresentação permitiu analisar a fundo a realidade de uma nação específica, utilizando dados confiáveis para entender sua formação e contexto atual. O trabalho em dupla facilitou a comparação de diferentes realidades e a compreensão da dinâmica geopolítica global. Habilidades/Competências: C1, H1, H2, H3, H4, H5.', justificativa: 'É importante para desenvolver a capacidade de pesquisa e análise crítica sobre como fatores históricos e geográficos influenciam as relações de poder e a organização das sociedades no mundo.', link: '#' }],
             '2trim': [],
             '3trim': []
         }
@@ -73,7 +76,7 @@ const dados = {
         volume: 'Volume V — Lover',
         cor: '#c084b8',
         trimestres: {
-            '1trim': [{ titulo: 'Título da Atividade', descricao: 'O que foi feito...', justificativa: 'Por que essa atividade é importante...' }],
+            '1trim': [{ titulo: 'Título da Atividade', descricao: 'O que foi feito...', justificativa: 'Por que essa atividade é importante...', link: '#' }],
             '2trim': [],
             '3trim': []
         }
@@ -120,11 +123,11 @@ function renderPopup() {
     // Abas de trimestre
     const tabs = document.createElement('div');
     tabs.className = 'popup-tabs';
-    Object.keys(trimLabels).forEach(function(trim) {
+    Object.keys(trimLabels).forEach(function (trim) {
         const tab = document.createElement('div');
         tab.className = 'popup-tab' + (trim === trimAtivo ? ' active' : '');
         tab.textContent = trimLabels[trim];
-        tab.onclick = function() { trimAtivo = trim; renderPopup(); };
+        tab.onclick = function () { trimAtivo = trim; renderPopup(); };
         tabs.appendChild(tab);
     });
     book.appendChild(tabs);
@@ -139,12 +142,19 @@ function renderPopup() {
         p.textContent = 'Nenhuma atividade registrada neste trimestre.';
         body.appendChild(p);
     } else {
-        ativs.forEach(function(a) {
+        ativs.forEach(function (a) {
             const div = document.createElement('div');
             div.className = 'popup-atividade';
-            div.innerHTML = '<h4>' + a.titulo + '</h4>'
+
+            let htmlContent = '<h4>' + a.titulo + '</h4>'
                 + '<p><strong>Descri\u00e7\u00e3o:</strong> ' + a.descricao + '</p>'
                 + '<p><strong>Justificativa:</strong> ' + a.justificativa + '</p>';
+
+            if (a.link) {
+                htmlContent += '<a href="' + a.link + '" target="_blank" rel="noopener noreferrer" class="btn-atividade">Acessar Atividade</a>';
+            }
+
+            div.innerHTML = htmlContent;
             body.appendChild(div);
         });
     }
@@ -160,4 +170,4 @@ function fecharPopupFora(e) {
     if (e.target === document.getElementById('popup-overlay')) fecharPopup();
 }
 
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fecharPopup(); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharPopup(); });

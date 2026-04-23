@@ -461,6 +461,7 @@ select {
     position: absolute;
     top: 16px;
     right: 16px;
+    z-index: 10;
     width: 32px;
     height: 32px;
     border: 2px solid #8a6a3a;
@@ -551,6 +552,28 @@ select {
     font-size: 13.5px;
     color: #3a2e1a;
     line-height: 32px;
+}
+.btn-atividade {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--j-ink) !important;
+    color: #e8d8a0 !important;
+    padding: 6px 16px;
+    border-radius: 2px !important;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid #555;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+    line-height: 1.2;
+}
+.btn-atividade:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #000;
+    color: #f8e8b8 !important;
 }
 .popup-vazio {
     color: #9a8a6a;
