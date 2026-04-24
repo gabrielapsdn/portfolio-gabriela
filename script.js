@@ -196,8 +196,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fech
         'width:100%',
         'height:100%',
         'pointer-events:none',
-        'z-index:999',
-        'mix-blend-mode:screen'
+        'z-index:999'
     ].join(';');
     document.body.appendChild(canvas);
 
