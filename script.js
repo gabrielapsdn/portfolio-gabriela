@@ -1,10 +1,13 @@
 // Filtro trimestre
-document.getElementById('select-trimestre').addEventListener('change', function () {
-    const v = this.value;
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.display = (v === 'todos' || card.getAttribute('data-trimestre') === v) ? 'block' : 'none';
+const selectTrim = document.getElementById('select-trimestre');
+if (selectTrim) {
+    selectTrim.addEventListener('change', function () {
+        const v = this.value;
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.display = (v === 'todos' || card.getAttribute('data-trimestre') === v) ? 'block' : 'none';
+        });
     });
-});
+}
 
 // Toggle apresentação
 const toggleBtn = document.getElementById('toggle-apresentacao');
@@ -76,7 +79,7 @@ const dados = {
         volume: 'Volume V — Lover',
         cor: '#c084b8',
         trimestres: {
-            '1trim': [{ titulo: 'Título da Atividade', descricao: 'O que foi feito...', justificativa: 'Por que essa atividade é importante...', link: '#' }],
+            '1trim': [{ titulo: 'Atividade Avaliativa: Grand Prix – Projeto Gammy', descricao: 'A participação no Grand Prix com o projeto Gammy permitiu a vivência de um desafio de inovação acelerada, focado no reaproveitamento de calor residual de sistemas de ar-condicionado. A atividade exigiu a estruturação rápida de um Lean Canvas para validar uma solução de eficiência energética que transforma desperdício térmico em economia real para edificações. O exercício aprimorou minha capacidade de trabalho em equipe, tomada de decisão sob pressão e síntese de modelos de negócio sustentáveis.', justificativa: 'Esta atividade é fundamental pois simula o ambiente dinâmico do mercado de trabalho, conectando conhecimentos técnicos de sustentabilidade e engenharia ao desenvolvimento de soft skills e visão empreendedora, essenciais para a criação de soluções de alto impacto em curtos espaços de tempo.', links: [{ label: 'Ver Apresentação', url: 'https://canva.link/sjpoqmpefi54brm' }, { label: 'Assistir Vídeo', url: 'https://youtu.be/CZZmJzWEinw?si=RyriPNuNhzM1VNXs' }], obs: 'Esta atividade vale para todas as matérias do 1º Trimestre.' }],
             '2trim': [],
             '3trim': []
         }
@@ -150,11 +153,19 @@ function renderPopup() {
                 + '<p><strong>Descri\u00e7\u00e3o:</strong> ' + a.descricao + '</p>'
                 + '<p><strong>Justificativa:</strong> ' + a.justificativa + '</p>';
 
-            if (a.link) {
+            if (a.links && a.links.length) {
+                a.links.forEach(function (l) {
+                    htmlContent += '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="btn-atividade">' + l.label + '</a> ';
+                });
+            } else if (a.link && a.link !== '#') {
                 htmlContent += '<a href="' + a.link + '" target="_blank" rel="noopener noreferrer" class="btn-atividade">Acessar Atividade</a>';
             }
 
-            div.innerHTML = htmlContent;
+            if (a.obs) {
+                    htmlContent += '<div class="popup-obs"><span class="popup-obs-icon">✦</span> ' + a.obs + '</div>';
+                }
+
+                div.innerHTML = htmlContent;
             body.appendChild(div);
         });
     }
@@ -171,3 +182,106 @@ function fecharPopupFora(e) {
 }
 
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharPopup(); });
+
+/* =============================================
+   PARTÍCULAS DE LUZ FLUTUANTES
+   ============================================= */
+(function () {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'particles-canvas';
+    canvas.style.cssText = [
+        'position:fixed',
+        'top:0',
+        'left:0',
+        'width:100%',
+        'height:100%',
+        'pointer-events:none',
+        'z-index:999',
+        'mix-blend-mode:screen'
+    ].join(';');
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    // Paleta dourada/âmbar combinando com o site
+    const CORES = [
+        '255,220,120',
+        '200,168,74',
+        '255,245,190',
+        '230,195,110',
+        '255,255,200'
+    ];
+
+    function Particle() {
+        this.reset(true);
+    }
+
+    Particle.prototype.reset = function (inicio) {
+        this.x  = Math.random() * W;
+        this.y  = inicio ? Math.random() * H : H + 10;
+        this.r  = Math.random() * 1.8 + 0.4;
+        this.vx = (Math.random() - 0.5) * 0.35;
+        this.vy = -(Math.random() * 0.5 + 0.15);
+        this.baseAlpha = Math.random() * 0.55 + 0.2;
+        this.pulse = Math.random() * Math.PI * 2;
+        this.pulseSpeed = Math.random() * 0.025 + 0.008;
+        this.cor = CORES[Math.floor(Math.random() * CORES.length)];
+    };
+
+    function initParticles() {
+        const qtd = Math.max(40, Math.floor((W * H) / 10000));
+        particles = [];
+        for (let i = 0; i < qtd; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+        initParticles();
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        particles.forEach(function (p) {
+            p.pulse += p.pulseSpeed;
+            const alpha = p.baseAlpha * (0.55 + 0.45 * Math.sin(p.pulse));
+
+            // Brilho externo (halo)
+            const haloR = p.r * 5;
+            const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, haloR);
+            grad.addColorStop(0,   'rgba(' + p.cor + ',' + (alpha * 0.9).toFixed(2) + ')');
+            grad.addColorStop(0.4, 'rgba(' + p.cor + ',' + (alpha * 0.4).toFixed(2) + ')');
+            grad.addColorStop(1,   'rgba(' + p.cor + ',0)');
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, haloR, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+
+            // Núcleo brilhante
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(' + p.cor + ',' + Math.min(alpha * 1.8, 1).toFixed(2) + ')';
+            ctx.fill();
+
+            // Movimento
+            p.x += p.vx;
+            p.y += p.vy;
+
+            // Wrap horizontal
+            if (p.x < -10) p.x = W + 10;
+            if (p.x > W + 10) p.x = -10;
+            // Reset quando sair pelo topo
+            if (p.y < -15) p.reset(false);
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    draw();
+    window.addEventListener('resize', resize);
+}());

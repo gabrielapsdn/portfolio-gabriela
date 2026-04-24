@@ -204,6 +204,7 @@ h2::after {
     align-items: center;
     gap: 24px;
     margin-top: 12px;
+    padding-bottom: 24px; /* Evita que a foto/sombra seja cortada pelo overflow:hidden */
 }
 
 .foto-perfil {
@@ -585,6 +586,31 @@ select {
     color: #9a8a6a;
     font-style: italic;
     line-height: 32px;
+}
+
+/* Card de observação dentro do popup */
+.popup-obs {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: #c8b47a;
+    border-left: 4px solid #8a6a20;
+    border-radius: 2px;
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #18130a;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    box-shadow: 2px 2px 0 #8a6a2066;
+}
+
+.popup-obs-icon {
+    color: #c8a84a;
+    font-style: normal;
+    flex-shrink: 0;
+    margin-top: 1px;
 }
 
 /* =============================================
