@@ -30,6 +30,9 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
     /* Camada 1: textura de papel envelhecido */
     background-color: var(--j-paper);
@@ -108,6 +111,9 @@ main {
     max-width: 1100px;
     margin: 32px auto;
     padding: 0 24px;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 section {
@@ -579,6 +585,41 @@ select {
     color: #9a8a6a;
     font-style: italic;
     line-height: 32px;
+}
+
+/* =============================================
+   FOOTER — rodapé estilo jornal
+   ============================================= */
+footer {
+    background: var(--j-ink);
+    color: var(--j-gold);
+    text-align: center;
+    padding: 20px 24px 18px;
+    margin-top: 48px;
+    border-top: 4px double #444;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.35);
+    position: relative;
+}
+
+footer::before {
+    content: '— ✦ —';
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: var(--j-gold);
+    opacity: 0.6;
+    margin-bottom: 6px;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e8d8a0;
+    opacity: 0.85;
 }
 
 /* =============================================
