@@ -666,6 +666,217 @@ footer p {
 .card img { width: 100%; height: auto; border-radius: 2px; object-fit: cover; }
 
 /* =============================================
+   MINI PLAYER FLUTUANTE — Spotify Widget
+   ============================================= */
+#spotify-widget {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    width: 300px;
+    font-family: 'Playfair Display', Georgia, serif;
+    user-select: none;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+    transition: filter 0.2s ease;
+}
+
+#spotify-widget:hover {
+    filter: drop-shadow(0 12px 32px rgba(0,0,0,0.55));
+}
+
+/* Quando arrastando */
+#spotify-widget.dragging {
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    transition: none;
+}
+
+/* Barra de controle / cabeçalho do widget */
+.sw-header {
+    background: var(--j-ink);
+    border: 2px solid var(--j-border);
+    border-bottom: none;
+    border-radius: 14px 14px 0 0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: grab;
+    gap: 8px;
+}
+
+.sw-header:active {
+    cursor: grabbing;
+}
+
+.sw-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+/* Ícone animado de nota musical */
+.sw-note {
+    font-size: 14px;
+    animation: sw-bounce 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes sw-bounce {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-4px) rotate(8deg); }
+}
+
+.sw-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--j-gold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sw-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+/* Botão minimizar/maximizar */
+.sw-btn-toggle {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid rgba(200,168,74,0.5);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--j-gold);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1;
+    padding: 0;
+}
+
+.sw-btn-toggle:hover {
+    background: rgba(200,168,74,0.15);
+    color: #f8e8b8;
+    border-color: var(--j-gold);
+}
+
+/* Link para abrir no Spotify */
+.sw-btn-open {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid rgba(200,168,74,0.5);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--j-gold);
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.sw-btn-open:hover {
+    background: rgba(200,168,74,0.15);
+    color: #f8e8b8 !important;
+    border-color: var(--j-gold);
+}
+
+/* Corpo do widget (expandido) */
+.sw-body {
+    border: 2px solid var(--j-border);
+    border-top: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: var(--j-ink);
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+    max-height: 200px;
+    opacity: 1;
+}
+
+.sw-body.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.sw-body iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+/* Rodapé do widget */
+.sw-footer {
+    background: var(--j-ink);
+    border: 2px solid var(--j-border);
+    border-top: 1px solid rgba(200,168,74,0.2);
+    border-bottom: none;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease,
+                padding 0.3s ease;
+    overflow: hidden;
+    max-height: 40px;
+    opacity: 1;
+}
+
+.sw-footer.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: none;
+}
+
+/* Final arredondado do widget */
+.sw-foot-end {
+    height: 6px;
+    background: var(--j-ink);
+    border: 2px solid var(--j-border);
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+    max-height: 10px;
+    opacity: 1;
+}
+
+.sw-foot-end.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.sw-meta {
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(200,168,74,0.6);
+}
+
+/* Barra de linha dourada na base do header */
+.sw-stripe {
+    height: 3px;
+    background: linear-gradient(to right, var(--j-gold), #e8c86a, var(--j-gold));
+    opacity: 0.6;
+}
+
+/* =============================================
    RESPONSIVO
    ============================================= */
 @media (max-width: 720px) {
@@ -674,4 +885,11 @@ footer p {
     .shelf { gap: 12px; padding: 16px 16px 0; }
     .album-cover-img { width: 100px; height: 162px; }
     h2 { font-size: 1.5rem; }
+
+    /* Widget menor em mobile */
+    #spotify-widget {
+        width: calc(100vw - 32px);
+        right: 16px;
+        bottom: 16px;
+    }
 }
