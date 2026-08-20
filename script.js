@@ -51,8 +51,7 @@ const dados = {
                 { titulo: 'Atividade - Criando a banca da matemática AV1', descricao: 'A atividade consiste em criar um jogo baseado no filme, utilizando análise combinatória e probabilidade. Os alunos devem elaborar regras claras, incluir estratégias matemáticas e testar o jogo. Ao final, os grupos apresentam e participam de uma competição entre si. Habilidades - H30, H31, C5.', justificativa: 'A atividade desenvolve o raciocínio lógico e a aplicação prática de análise combinatória e probabilidade, estimulando o trabalho em equipe e a criatividade na criação de jogos matemáticos.', link: 'https://canva.link/bnquy1tz7un84jg' }
             ],
             '2trim': [
-                { titulo: 'Atividade 1 — 2º Trimestre', descricao: 'Descrição da atividade realizada no 2º trimestre de Matemática. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' },
-                { titulo: 'Atividade 2 — 2º Trimestre', descricao: 'Descrição da segunda atividade realizada no 2º trimestre de Matemática. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' }
+                { titulo: 'Apresentação: Detetives de Dados — Epidemia de Sono', descricao: 'Apresentação de pesquisa e análise estatística investigando a relação entre o tempo de tela tardio e a exaustão matinal dos estudantes do Ensino Médio. A atividade envolveu coleta de dados amostrais, análise de frequências, cálculo de moda estatística e interpretação gráfica.', justificativa: 'Esta atividade permitiu aplicar conceitos práticos de estatística a um problema real do cotidiano, desenvolvendo a interpretação de dados quantitativos e o trabalho em equipe.', link: 'https://docs.google.com/presentation/d/1TQP93z6lky2vZ-aQi3W0Vm57Z4gi0T1C1LmsqWLROPA/edit?usp=sharing' }
             ],
             '3trim': []
         }
@@ -66,9 +65,33 @@ const dados = {
             { titulo: 'Apresentação: Combustíveis Fósseis', descricao: 'A atividade abordou o impacto ambiental e a dependência social dos combustíveis fósseis. Através da pesquisa e apresentação, foi possível compreender as transformações de energia e os desafios para a implementação de fontes mais limpas. Habilidades/Competências: C1, H1, C2, H9, H11.', justificativa: 'Fundamental para conscientizar sobre o papel da química na sustentabilidade e desenvolver a habilidade de propor intervenções tecnológicas responsáveis.', link: 'https://canva.link/s1ua84o0upb0ywg' },
             { titulo: 'Relatório: Disputa de Eletricidade (Atrito)', descricao: 'O relatório da atividade prática sobre eletricidade por atrito explorou os fundamentos da eletrostática na prática. A experiência ajudou a observar a transferência de cargas e a entender fenômenos do cotidiano através da investigação científica. Habilidades/Competências: C1, H1, C2, H7, H9, H11, H12.', justificativa: 'Esta atividade é essencial para conectar a teoria física à experimentação, estimulando a curiosidade científica e o domínio do método de observação.', link: 'https://docs.google.com/document/d/1PiyhOeO2tA8AVcpkrQW_lo7eLTTO9yOACASRrnuEaiU/edit?usp=sharing' }],
             '2trim': [
-                { titulo: 'Atividade 1 — 2º Trimestre', descricao: 'Descrição da atividade realizada no 2º trimestre de Ciências da Natureza. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' },
-                { titulo: 'Atividade 2 — 2º Trimestre', descricao: 'Descrição da segunda atividade realizada no 2º trimestre de Ciências da Natureza. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' },
-                { titulo: 'Atividade 3 — 2º Trimestre', descricao: 'Descrição da terceira atividade realizada no 2º trimestre de Ciências da Natureza. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' }
+                {
+                    titulo: 'Mural Interativo',
+                    descricao: 'A atividade propôs a construção de um mural interativo em grupo sobre impactos ambientais, saúde pública, saneamento básico e prevenção. Fiquei responsável pela elaboração do formulário interativo de perguntas para os visitantes, disponibilizado via QR Code no mural. Competências e Habilidades: C2 (H11), C3 (H15, H18) e C4 (H23).',
+                    justificativa: 'Esta atividade permitiu conectar os conhecimentos de Ciências da Natureza à comunidade escolar por meio de um formato dinâmico e participativo, desenvolvendo a investigação científica, conscientização socioambiental e o trabalho em equipe.',
+                    imagens: [
+                        { src: 'mural-turma.png', legenda: 'Mural interativo da turma' },
+                        { src: 'mural-perguntas.png', legenda: 'Minha parte: Formulário com perguntas para visitantes' }
+                    ]
+                },
+                {
+                    titulo: 'Seminário: Estequiometria na Indústria',
+                    descricao: 'Apresentação e seminário sobre a aplicação dos cálculos estequiométricos nos processos industriais, analisando rendimento de reações, proporções de reagentes e transformações de matéria e energia. Competências e Habilidades: C2, H6, H7 e H9.',
+                    justificativa: 'Esta atividade é essencial para compreender como a química quantitativa se conecta à produção industrial e à tecnologia, desenvolvendo a capacidade de análise científica e exposição oral.',
+                    link: '#'
+                },
+                {
+                    titulo: 'Cartilha: Eletricidade e o Corpo Humano',
+                    descricao: 'Produção de uma cartilha informativa explorando a relação entre a eletricidade e o corpo humano, abordando a condução de impulsos elétricos no organismo, riscos de choque e medidas de prevenção e saúde. Competências e Habilidades: C1 (H3, H4), C2 (H12) e C4 (H23).',
+                    justificativa: 'Fundamental para exercitar a divulgação científica e o design instrucional, unindo conceitos de física e biologia em prol da conscientização sobre segurança e saúde individual e coletiva.',
+                    link: '#'
+                },
+                {
+                    titulo: 'Portfólio Digital de Eletroquímica',
+                    descricao: 'Registro e portfólio digital da atividade experimental de Eletroquímica, documentando a prática científica, levantamento de hipóteses e transformações energéticas em reações químicas. Competências e Habilidades: C2, H7, H9 e H11.',
+                    justificativa: 'A prática experimental aliada ao registro em vídeo consolidou o método científico na prática, facilitando o entendimento de fenômenos eletroquímicos do cotidiano.',
+                    link: '#'
+                }
             ],
             '3trim': []
         }
@@ -96,10 +119,35 @@ const dados = {
         trimestres: {
             '1trim': [{ titulo: 'Atividade Avaliativa: Grand Prix – Projeto Gammy', descricao: 'A participação no Grand Prix com o projeto Gammy permitiu a vivência de um desafio de inovação acelerada, focado no reaproveitamento de calor residual de sistemas de ar-condicionado. A atividade exigiu a estruturação rápida de um Lean Canvas para validar uma solução de eficiência energética que transforma desperdício térmico em economia real para edificações. O exercício aprimorou minha capacidade de trabalho em equipe, tomada de decisão sob pressão e síntese de modelos de negócio sustentáveis.', justificativa: 'Esta atividade é fundamental pois simula o ambiente dinâmico do mercado de trabalho, conectando conhecimentos técnicos de sustentabilidade e engenharia ao desenvolvimento de soft skills e visão empreendedora, essenciais para a criação de soluções de alto impacto em curtos espaços de tempo.', links: [{ label: 'Ver Apresentação', url: 'https://canva.link/sjpoqmpefi54brm' }, { label: 'Assistir Vídeo', url: 'https://youtu.be/CZZmJzWEinw?si=RyriPNuNhzM1VNXs' }], obs: 'Esta atividade vale para todas as matérias do 1º Trimestre.' }],
             '2trim': [
-                { titulo: 'Atividade 1 — 2º Trimestre', descricao: 'Descrição da atividade realizada no 2º trimestre de Técnico Dev. Sistemas. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#', obs: 'Esta atividade vale para as matérias de Programação de Aplicativo by SAMUEL e Desenvolvimento de Sistemas by WILLER.' },
-                { titulo: 'Atividade 2 — 2º Trimestre', descricao: 'Descrição da segunda atividade realizada no 2º trimestre de Técnico Dev. Sistemas. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' },
-                { titulo: 'Atividade 3 — 2º Trimestre', descricao: 'Descrição da terceira atividade realizada no 2º trimestre de Técnico Dev. Sistemas. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' },
-                { titulo: 'Atividade 4 — 2º Trimestre', descricao: 'Descrição da quarta atividade realizada no 2º trimestre de Técnico Dev. Sistemas. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' }
+                {
+                    titulo: 'Desafio BP Web — Plataforma IoT & Web API',
+                    descricao: 'Desenvolvimento do desafio prático BP Web para integração entre sistemas embarcados e plataforma web. Criação de rotas para envio e recebimento de telemetria, com hospedagem e deploy da aplicação em nuvem na Render. Competências & Habilidades: Desenvolvimento Web Front-end & Back-end, Consumo de APIs REST e comunicação HTTP, Deploy e hospedagem de aplicações em nuvem (Render).',
+                    justificativa: 'Esta atividade foi fundamental para consolidar a integração full-stack de ponta a ponta, desenvolvendo habilidades de estruturação de APIs, gerenciamento de requisições assíncronas e deploy contínuo em ambiente de produção.',
+                    link: 'https://rinhasenai2026-ngji.onrender.com/',
+                    imagem: 'bp-web-dashboard.png',
+                    obs: 'Esta atividade vale para as matérias de Programação de Aplicativos e Desenvolvimento de Sistemas.'
+                },
+                {
+                    titulo: 'Protótipo de Semáforo Inteligente',
+                    descricao: 'Montagem física de circuito eletrônico simulando a temporização e o ciclo de transição de um Semáforo Inteligente de trânsito. Implementação do algoritmo de controle de LEDs via microcontrolador. Competências & Habilidades: Programação de Microcontroladores (Arduino / ESP32), Lógica de Máquinas de Estados (State Machines), Montagem de Circuitos e Sinalização Eletrônica.',
+                    justificativa: 'Esta atividade desenvolveu a compreensão prática da integração entre hardware e software embarcado, permitindo estruturar lógicas temporizadas e controle de atuadores luminosos para sinalização urbana.',
+                    link: 'https://youtu.be/nkRhrmmJBz4?si=s9iamZlWiwdZynA',
+                    obs: 'Matéria: Internet das Coisas (IoT)'
+                },
+                {
+                    titulo: 'Controle Básico de Saída Digital — Ligar LED',
+                    descricao: 'Projeto prático básico de automação e embarcados. Configuração de pinos de saída digital (GPIO) em microcontrolador para acionamento e controle de tempo de acendimento de um atuador luminoso (LED). Competências & Habilidades: Configuração de Pinos GPIO de Saída, Eletrônica Digital e Dimensionamento de Resistores, Estrutura de Firmware Embarcado em C/C++.',
+                    justificativa: 'Fundamental para dominar os primeiros passos em sistemas embarcados, compreendendo a pinagem digital do microcontrolador e a eletrônica básica aplicada.',
+                    link: 'https://youtu.be/j95tsOfhthg?si=BvO0ElE94AtqrEOy',
+                    obs: 'Matéria: Internet das Coisas (IoT)'
+                },
+                {
+                    titulo: 'Controle de LED com Botão (Lógica Toggle Interativa)',
+                    descricao: 'Desafio prático de controle de atuador por sinal de entrada (push-button). Implementação da lógica Toggle onde cada pressionamento do botão inverte o estado atual do LED, além da aplicação de técnica de software para tratamento do efeito de ruído mecânico (debounce). Competências & Habilidades: Leitura de Entradas Digitais & Debounce por Software, Lógica de Alternância de Estado (Toggle Flip-Flop), Controle Reativo em Sistemas Embarcados.',
+                    justificativa: 'Essencial para compreender o processamento de sinais de entrada digitais, tratamento de debounce em software e criação de interfaces homem-máquina interativas.',
+                    link: 'https://youtube.com/shorts/KcOSBOOBPlU?si=c-3f68KMCCA7h9ts',
+                    obs: 'Matéria: Internet das Coisas (IoT)'
+                }
             ],
             '3trim': []
         }
@@ -173,7 +221,15 @@ function renderPopup() {
                 + '<p><strong>Descri\u00e7\u00e3o:</strong> ' + a.descricao + '</p>'
                 + '<p><strong>Justificativa:</strong> ' + a.justificativa + '</p>';
 
-            if (a.imagem) {
+            if (a.imagens && a.imagens.length) {
+                htmlContent += '<div class="popup-atividade-imgs-grid">';
+                a.imagens.forEach(function (img) {
+                    const src = typeof img === 'string' ? img : img.src;
+                    const caption = (typeof img === 'object' && img.legenda) ? '<span class="popup-img-caption">' + img.legenda + '</span>' : '';
+                    htmlContent += '<div class="popup-atividade-img-item"><img src="' + src + '" alt="' + (a.titulo || 'Imagem da atividade') + '" class="popup-atividade-img" loading="lazy">' + caption + '</div>';
+                });
+                htmlContent += '</div>';
+            } else if (a.imagem) {
                 htmlContent += '<div class="popup-atividade-img-wrapper"><img src="' + a.imagem + '" alt="' + (a.titulo || 'Imagem da atividade') + '" class="popup-atividade-img" loading="lazy"></div>';
             }
 
