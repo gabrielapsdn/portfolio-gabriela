@@ -34,8 +34,9 @@ const dados = {
             '1trim': [{ titulo: 'Atividade Avaliativa: A Paixão de G.H.', descricao: 'A produção do vídeo sobre a obra de Clarice Lispector me permitiu analisar a relação entre literatura e sociologia, focando nas tensões sociais presentes na narrativa. A atividade exercitou minha capacidade de síntese e interpretação crítica sobre o existencialismo.', justificativa: 'Esta atividade é importante pois conecta a teoria literária à realidade social, desenvolvendo o pensamento crítico e habilidades de comunicação audiovisual.', link: 'https://canva.link/lixqtkksiwe43jf' },
             { titulo: 'Atividade de aula: Game Literário (26/02)', descricao: 'A criação do jogo de memória em grupo foi uma maneira lúdica de fixar conceitos literários e trabalhar a colaboração. A atividade uniu criatividade e técnica para transformar o conteúdo teórico em uma experiência prática. Habilidade: H15', justificativa: 'É fundamental para estimular o aprendizado ativo e o trabalho em equipe, facilitando a memorização de temas complexos através da ludicidade.', link: 'https://canva.link/7c70e2mp451kqfb' }],
             '2trim': [
-                { titulo: 'Atividade 1 — 2º Trimestre', descricao: 'Descrição da atividade realizada no 2º trimestre de Linguagens & Códigos. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' },
-                { titulo: 'Atividade 2 — 2º Trimestre', descricao: 'Descrição da segunda atividade realizada no 2º trimestre de Linguagens & Códigos. Descreva aqui o que foi proposto, o que foi desenvolvido e quais habilidades foram trabalhadas.', justificativa: 'Justifique aqui a importância dessa atividade para o seu aprendizado e desenvolvimento.', link: '#' }
+                { titulo: 'Videomanifesto Modernista', descricao: 'A atividade propõe a criação de um videomanifesto, em grupo, sobre um tema atual. O objetivo é apresentar uma opinião, usar argumentos e criatividade, além de se inspirar nas características dos manifestos modernistas. Habilidades: H3 e H24.', justificativa: 'Achei a atividade interessante e criativa, pois permite aprender sobre o Modernismo de uma forma diferente. Também ajuda a desenvolver a argumentação, a criatividade e o trabalho em equipe.', link: 'https://www.youtube.com/shorts/O736ISMCq7s' },
+                { titulo: 'Favorite Artist, Movie & Song', descricao: 'A atividade consistiu na produção de um texto em inglês sobre um artista, um filme e uma música favoritos. Foi necessário pesquisar informações sobre cada escolha, além de explicar a importância pessoal de cada uma. A atividade também trabalhou o uso do Simple Past e a habilidade H25.', justificativa: 'A atividade foi interessante por relacionar o inglês aos gostos pessoais dos alunos, tornando o aprendizado mais dinâmico. Porém, poderia incluir uma apresentação oral para estimular também a comunicação em inglês.', link: 'https://docs.google.com/document/d/1NObPjV4OOcxhq9WUwR8WP_b8lHUtKVeSxS1Dy32W-4A/edit?usp=sharing' },
+                { titulo: 'Redação — Autodiagnóstico nas Redes Sociais', descricao: 'A atividade consistiu na produção de uma redação sobre os perigos do autodiagnóstico de transtornos mentais nas redes sociais no Brasil. O objetivo foi desenvolver a argumentação e a reflexão sobre um tema atual e relevante para a sociedade. Habilidade: H22.', justificativa: 'A atividade foi importante por abordar um problema presente no cotidiano, incentivando uma visão crítica sobre o uso das redes sociais e a saúde mental. O tema também permitiu desenvolver a capacidade de argumentação e conscientização.', imagem: 'redacao-nota.png' }
             ],
             '3trim': []
         }
@@ -172,11 +173,15 @@ function renderPopup() {
                 + '<p><strong>Descri\u00e7\u00e3o:</strong> ' + a.descricao + '</p>'
                 + '<p><strong>Justificativa:</strong> ' + a.justificativa + '</p>';
 
+            if (a.imagem) {
+                htmlContent += '<div class="popup-atividade-img-wrapper"><img src="' + a.imagem + '" alt="' + (a.titulo || 'Imagem da atividade') + '" class="popup-atividade-img" loading="lazy"></div>';
+            }
+
             if (a.links && a.links.length) {
                 a.links.forEach(function (l) {
                     htmlContent += '<a href="' + l.url + '" target="_blank" rel="noopener noreferrer" class="btn-atividade">' + l.label + '</a> ';
                 });
-            } else if (a.link) {
+            } else if (a.link && a.link !== '#') {
                 htmlContent += '<a href="' + a.link + '" target="_blank" rel="noopener noreferrer" class="btn-atividade">Acessar Atividade</a>';
             }
 
