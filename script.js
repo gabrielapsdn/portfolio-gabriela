@@ -38,7 +38,22 @@ const dados = {
                 { titulo: 'Favorite Artist, Movie & Song', descricao: 'A atividade consistiu na produção de um texto em inglês sobre um artista, um filme e uma música favoritos. Foi necessário pesquisar informações sobre cada escolha, além de explicar a importância pessoal de cada uma. A atividade também trabalhou o uso do Simple Past e a habilidade H25.', justificativa: 'A atividade foi interessante por relacionar o inglês aos gostos pessoais dos alunos, tornando o aprendizado mais dinâmico. Porém, poderia incluir uma apresentação oral para estimular também a comunicação em inglês.', link: 'https://docs.google.com/document/d/1NObPjV4OOcxhq9WUwR8WP_b8lHUtKVeSxS1Dy32W-4A/edit?usp=sharing' },
                 { titulo: 'Redação — Autodiagnóstico nas Redes Sociais', descricao: 'A atividade consistiu na produção de uma redação sobre os perigos do autodiagnóstico de transtornos mentais nas redes sociais no Brasil. O objetivo foi desenvolver a argumentação e a reflexão sobre um tema atual e relevante para a sociedade. Habilidade: H22.', justificativa: 'A atividade foi importante por abordar um problema presente no cotidiano, incentivando uma visão crítica sobre o uso das redes sociais e a saúde mental. O tema também permitiu desenvolver a capacidade de argumentação e conscientização.', imagem: 'redacao-nota.png' }
             ],
-            '3trim': []
+            '3trim': [
+                {
+                    titulo: 'Narrativas Hiperlinks — Secos e Molhados',
+                    descricao: 'Produção de site/narrativa com hiperlinks sobre o grupo Secos e Molhados. [Inserir descrição da atividade.] Competência e Habilidade: C3 — Articular aspectos das identidades em textos e manifestações artísticas e culturais, considerando as práticas sociais e as linguagens utilizadas. H15 — Produzir trabalhos individuais e coletivos, explorando materiais e técnicas ligados ao universo das composições artísticas e de práticas corporais.',
+                    justificativa: '[Inserir análise crítica relacionada à atividade.]',
+                    link: '#',
+                    obs: 'Espaço reservado: inserir o link do site, a descrição e a análise crítica relacionada à atividade.'
+                },
+                {
+                    titulo: 'Redações — Plataforma Imagine',
+                    descricao: 'Redação produzida na plataforma Imagine. [Inserir tema e breve descrição da redação escolhida.] Competência e Habilidade: C4 — Produzir textos orais e escritos, utilizando-os como meio de acesso e permanência no mundo do trabalho, respondendo aos diferentes propósitos da comunicação. H22 — Produzir textos técnicos de acordo com uma estrutura estabelecida.',
+                    justificativa: '[Inserir análise crítica sobre a redação escolhida.]',
+                    imagem: '',
+                    obs: 'Espaço reservado: escolher uma das redações da plataforma Imagine, inserir o print no campo imagem e completar a análise crítica.'
+                }
+            ]
         }
     },
     matematica: {
@@ -53,7 +68,15 @@ const dados = {
             '2trim': [
                 { titulo: 'Apresentação: Detetives de Dados — Epidemia de Sono', descricao: 'Apresentação de pesquisa e análise estatística investigando a relação entre o tempo de tela tardio e a exaustão matinal dos estudantes do Ensino Médio. A atividade envolveu coleta de dados amostrais, análise de frequências, cálculo de moda estatística e interpretação gráfica.', justificativa: 'Esta atividade permitiu aplicar conceitos práticos de estatística a um problema real do cotidiano, desenvolvendo a interpretação de dados quantitativos e o trabalho em equipe.', link: 'https://docs.google.com/presentation/d/1TQP93z6lky2vZ-aQi3W0Vm57Z4gi0T1C1LmsqWLROPA/edit?usp=sharing' }
             ],
-            '3trim': []
+            '3trim': [
+                {
+                    titulo: 'Ciclo Trigonométrico',
+                    descricao: 'Apresentação com todas as etapas do projeto sobre o Ciclo Trigonométrico. [Inserir descrição das etapas desenvolvidas.] Competência: C2 — Reconhecer e utilizar a linguagem algébrica e suas representações como a linguagem das ciências, necessária para expressar a relação entre grandezas e criar modelos descritivos permitindo conexões da matemática com fenômenos, sistemas naturais e tecnológicos. Habilidades: H5 — Ler e interpretar diferentes linguagens e representações envolvendo variações de grandezas; H16 — Compreender e construir modelos que correspondem a fenômenos periódicos.',
+                    justificativa: '[Inserir justificativa e análise sobre os conhecimentos trabalhados no projeto.]',
+                    link: '#',
+                    obs: 'Entrega: Apresentação com todas as etapas do projeto (inserir o link da apresentação).'
+                }
+            ]
         }
     },
     natureza: {
@@ -93,7 +116,32 @@ const dados = {
                     link: 'https://sites.google.com/estudante.sesisenai.org.br/gammy/eletroqu%C3%ADmica-no-enem'
                 }
             ],
-            '3trim': []
+            '3trim': [
+                {
+                    titulo: 'Ciclos Biogeoquímicos — Biologia (Beux)',
+                    descricao: 'Entrega do painel na forma de infográfico ou apresentação com explicação da proposta e habilidades. [Inserir descrição da atividade realizada.] Competências e Habilidades: C1 — Compreender as ciências naturais e as tecnologias como construções humanas associadas à cultura dos povos e suas visões de mundo; H4 — Identificar, em textos, diagramas, gráficos, imagens e tabelas, informações relevantes para compreender um fenômeno ou conceito relacionado às Ciências da Natureza; C2 — Aplicar os conceitos fundamentais e estruturas procedimentais das Ciências da Natureza na explicação de fenômenos cotidianos, bem como dominar processos e práticas da investigação científica; H11 — Empregar procedimentos e práticas de observação, levantamento de hipótese, experimentação, coleta de dados e conclusões para resolução de problemas relacionados às Ciências da Natureza; C5 — Determinar as características das tecnologias associadas às Ciências da Natureza aplicadas em diferentes serviços ou contextos; H24 — Descrever as propriedades físicas, químicas e/ou biológicas dos materiais relacionando-os às finalidades às quais se destinam.',
+                    justificativa: '[Explicar quais os objetivos propostos pelo professor e quais conhecimentos trabalhou a partir do trabalho realizado.]',
+                    links: [
+                        { label: 'Roteiro da Atividade', url: 'https://docs.google.com/document/d/1dStD-7c7277a5QzYCH-nrIQ1v4DnZkH8kYnp8Wt0Y-U/edit?usp=sharing' }
+                    ],
+                    obs: 'Biologia (Beux) • Formato: Infográfico ou apresentação (adicionar o link da sua entrega em links).'
+                },
+                {
+                    titulo: 'Infográfico: Magnetismo no Mundo Real — Física (Ana)',
+                    descricao: 'Produção de infográfico sobre Magnetismo no Mundo Real. [Inserir descrição da proposta e do infográfico produzido.] Competências e Habilidades: C5 — Determinar as características das tecnologias associadas às Ciências da Natureza aplicadas em diferentes serviços ou contextos produtivos: indústria, manufatura, agricultura, agroindústria, extrativismo; H26 — Utilizar manuais para conhecer os processos de instalação e operação de diferentes equipamentos; H27 — Executar testes de controle para a comparação de serviços, materiais e produtos, utilizando parâmetros como custo e eficiência, empregabilidade, efeito colateral, riscos e benefícios; H28 — Reconhecer e utilizar nomenclatura e códigos científicos e tecnológicos para caracterizar materiais, substâncias e processos.',
+                    justificativa: '[Explicar quais os objetivos propostos pela professora e quais conhecimentos trabalhou a partir do trabalho realizado.]',
+                    link: '#',
+                    imagem: '',
+                    obs: 'Física (Ana) • Formato: Infográfico (inserir link ou imagem do infográfico).'
+                },
+                {
+                    titulo: 'E-book: Óleos Essenciais (Vídeo + E-book) — Química (Romuel)',
+                    descricao: 'Produção de vídeo e e-book sobre Óleos Essenciais. [Inserir descrição da proposta, matérias-primas e etapas trabalhadas.] Competências e Habilidades: C5 — Determinar as características das tecnologias associadas às Ciências da Natureza aplicadas em diferentes serviços ou contextos produtivos: indústria, manufatura, agricultura, agroindústria, extrativismo; H12 — Relacionar informações para construir modelos em Ciência e Tecnologia; H24 — Descrever propriedades físicas, químicas e/ou biológicas dos materiais, relacionando-as às suas finalidades; H25 — Identificar matérias-primas e etapas de transformação, descrevendo processos físicos, químicos e/ou biológicos.',
+                    justificativa: '[Explicar quais os objetivos propostos pelo professor e quais conhecimentos trabalhou a partir do trabalho realizado.]',
+                    links: [],
+                    obs: 'Química (Romuel) • Formato: Vídeo + E-book (inserir os links do vídeo e do e-book em links).'
+                }
+            ]
         }
     },
     humanas: {
@@ -109,7 +157,29 @@ const dados = {
                 { titulo: 'Apresentação: Totalitarismo no Cinema — Shrek', descricao: 'A atividade propôs a análise de um filme para identificar características dos regimes totalitários. Escolhi o Shrek e elaborei uma apresentação relacionando cenas, falas e comportamentos do filme às práticas totalitaristas estudadas em aula. Habilidades: H10, H22, H26 e H27.', justificativa: 'Analisar o totalitarismo através do cinema permitiu enxergar como essas práticas de controle e opressão aparecem de forma alegórica em produções culturais populares, desenvolvendo o olhar crítico para além dos livros didáticos.', link: 'https://canva.link/90a68w1xtcbj2om' },
                 { titulo: 'É Isto um Homem? — Desumanização e Pessoas em Situação de Rua', descricao: 'A partir da leitura de Primo Levi e do conceito de desumanização no Holocausto, investigamos em grupo como mecanismos semelhantes operam hoje sobre as pessoas em situação de rua. A pesquisa utilizou reportagens, dados estatísticos, documentários e fontes acadêmicas para analisar estereótipos e discursos que negam a dignidade desse grupo. Habilidades: H10, H22, H26 e H27.', justificativa: 'A atividade foi marcante por conectar um texto literário-histórico intenso à realidade brasileira contemporânea, desenvolvendo o olhar filosófico e crítico sobre como a sociedade invisibiliza e desumaniza grupos vulneráveis no cotidiano.', link: 'https://canva.link/tmw11vc0rs1ggyg' }
             ],
-            '3trim': []
+            '3trim': [
+                {
+                    titulo: 'Atividade 1 — [Inserir título da atividade]',
+                    descricao: '[Inserir descrição da atividade escolhida em Ciências Humanas.] Habilidades: [Inserir competências e habilidades].',
+                    justificativa: '[Inserir justificativa/análise sobre os conhecimentos trabalhados na atividade.]',
+                    link: '#',
+                    obs: 'Espaço reservado (1/3): escolher uma atividade trabalhada em Ciências Humanas e preencher título, descrição, habilidades e link.'
+                },
+                {
+                    titulo: 'Atividade 2 — [Inserir título da atividade]',
+                    descricao: '[Inserir descrição da atividade escolhida em Ciências Humanas.] Habilidades: [Inserir competências e habilidades].',
+                    justificativa: '[Inserir justificativa/análise sobre os conhecimentos trabalhados na atividade.]',
+                    link: '#',
+                    obs: 'Espaço reservado (2/3): escolher uma atividade trabalhada em Ciências Humanas e preencher título, descrição, habilidades e link.'
+                },
+                {
+                    titulo: 'Atividade 3 — [Inserir título da atividade]',
+                    descricao: '[Inserir descrição da atividade escolhida em Ciências Humanas.] Habilidades: [Inserir competências e habilidades].',
+                    justificativa: '[Inserir justificativa/análise sobre os conhecimentos trabalhados na atividade.]',
+                    link: '#',
+                    obs: 'Espaço reservado (3/3): escolher uma atividade trabalhada em Ciências Humanas e preencher título, descrição, habilidades e link.'
+                }
+            ]
         }
     },
     tec: {
